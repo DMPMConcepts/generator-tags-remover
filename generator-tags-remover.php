@@ -8,50 +8,40 @@ Author: Gulshan Thakare
 Author URI: http://www.dmpmconcepts.com/
 GitHub Plugin URI: https://github.com/DMPMConcepts/generator-tags-remover
 */
-/**
- * Remove <meta name="generator"> tag created by the WPML PLugin. 
- */
-if ( !empty ( $GLOBALS['sitepress'] ) ) {
 
-	function remove_wpml_generator() {
+
+function remove_generator_tags() {
+		
+//hide meta tag generator for rev slider 
+    
+	add_filter( 'revslider_meta_generator', '__return_empty_string' );
 	
+// hide the meta tag generator from head and rss
+
+    add_filter('the_generator','__return_empty_string');
+    remove_action('wp_head', 'wp_generator');		
+		
+//hide meta tag generator WPML Plugin 		
+	
+	if ( !empty ( $GLOBALS['sitepress'] ) ) {
 		remove_action(
-		    current_filter(),
+		    'wp_head',
 		    array ( $GLOBALS['sitepress'], 'meta_generator_tag' )
 		);
-	
+		
 	}
-	add_action( 'wp_head', 'remove_wpml_generator', 0 );
-	
-} 
-
-// hide the meta tag generator from head and rss
-function disable_version() {
-   return '';
-}
-add_filter('the_generator','disable_version');
-remove_action('wp_head', 'wp_generator');
-
-//hide meta tag generator for rev slider 
-function remove_revslider_meta_tag() {
-    return '';
- }
- add_filter( 'revslider_meta_generator', 'remove_revslider_meta_tag' );
-
 //hide meta tag generator for vc
-
-function myoverride() {
-if ( class_exists( 'Vc_Manager' ) ) {
+	
+		if ( class_exists( 'Vc_Manager' ) ) {
 	
 remove_action('wp_head', array(visual_composer(), 'addMetaData'));
 }
-}
-add_action('init', 'myoverride', 100);
-
 
 //Remove WooCommerce Generator Tag
-function remove_woo_commerce_generator_tag()
-{
+
     remove_action('wp_head','wc_generator_tag');
-}
-add_action('get_header','remove_woo_commerce_generator_tag');
+	
+	
+} 
+
+add_action('init', 'remove_generator_tags');
