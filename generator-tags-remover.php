@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Generator Tags Remover
-Plugin URI: http://www.2020compute.com/
+Plugin URI: 
 Description: It Removes generator tags of Wordpress, Revolution Slider, WPML, Visual Composer, WooCommerce.
-Version: 1.0
+Version: 1.1
 Author: Gulshan Thakare
-Author URI: http://www.2020compute.com/
-GitHub Plugin URI: https://github.com/2020Compute/
+Author URI: http://www.dmpmconcepts.com/
+GitHub Plugin URI: https://github.com/DMPMConcepts/generator-tags-remover
 */
 /**
  * Remove <meta name="generator"> tag created by the WPML PLugin. 
