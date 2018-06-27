@@ -16,6 +16,10 @@ function remove_generator_tags() {
     
 	add_filter( 'revslider_meta_generator', '__return_empty_string' );
 	
+//hide meta tag generator for Layer Slider
+    
+	add_filter( 'ls_meta_generator', '__return_empty_string' );	
+	
 // hide the meta tag generator from head and rss
 
     add_filter('the_generator','__return_empty_string');
