@@ -7,11 +7,11 @@ WordPress is the most popular blogging and CMS system, which makes it a favourit
  
  ## List of supported plugins
  
- 1 ### Revolution Slider
- 2 ### Layer Slider
- 3 ### Visual Composer
- 4 ### WPML
- 5 ### WooCommerce
+ * ### Revolution Slider
+ * ### Layer Slider
+ * ### Visual Composer
+ * ### WPML
+ * ### WooCommerce
  
  
  ## Please raise the issue for more plugins !
