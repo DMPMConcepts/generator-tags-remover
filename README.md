@@ -18,18 +18,3 @@ WordPress is the most popular blogging and CMS system, which makes it a favourit
  
  
  
-function redirect_unattached_images() {
-if ( is_attachment() ) {
-global $post;
-if  ( $post->post_parent == 0 ) {
-
-        wp_redirect( 'https://www.tricorglobal.com' );
-}
-else{
-        wp_redirect(get_permalink($post->post_parent)) ;
-  }
- }
-}
-add_action('template_redirect', 'redirect_unattached_images');
-
-
