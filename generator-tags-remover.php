@@ -2,13 +2,15 @@
 /*
 Plugin Name: Generator Tags & Version Info Remover
 Plugin URI: 
-Description: It Removes generator tags of Wordpress, Revolution Slider, WPML, Visual Composer, WooCommerce. It also removes the version info from the stylesheet.
+Description: It Removes generator tags of Wordpress, Revolution Slider, Layer Slider, WPML, Visual Composer, WooCommerce. It also removes the version info from the stylesheet.
 Version: 2.0
 Author: Gulshan Thakare
 Author URI: http://www.dmpmconcepts.com/
 GitHub Plugin URI: https://github.com/DMPMConcepts/generator-tags-remover
 */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 function remove_generator_tags() {
 		
